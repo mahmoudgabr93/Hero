@@ -1,4 +1,4 @@
-package model;
+package com.example.gabrm.retrofitjsonexample.model;
 
 public class Hero {
     private String name;

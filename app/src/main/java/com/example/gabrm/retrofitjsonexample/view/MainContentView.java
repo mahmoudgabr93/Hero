@@ -1,8 +1,8 @@
-package view;
+package com.example.gabrm.retrofitjsonexample.view;
 
 import java.util.List;
 
-import model.Hero;
+import com.example.gabrm.retrofitjsonexample.model.Hero;
 
 public interface MainContentView {
     public void OnResponseSuccess(List<Hero> heroesList);

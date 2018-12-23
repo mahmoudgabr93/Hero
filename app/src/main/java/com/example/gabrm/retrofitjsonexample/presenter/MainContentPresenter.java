@@ -1,10 +1,10 @@
-package presenter;
+package com.example.gabrm.retrofitjsonexample.presenter;
 
 import java.util.List;
 
-import model.Api;
-import model.Hero;
-import view.MainContentView;
+import com.example.gabrm.retrofitjsonexample.model.Api;
+import com.example.gabrm.retrofitjsonexample.model.Hero;
+import com.example.gabrm.retrofitjsonexample.view.MainContentView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

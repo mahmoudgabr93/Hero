@@ -1,4 +1,4 @@
-package view;
+package com.example.gabrm.retrofitjsonexample.view;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +12,15 @@ import com.example.gabrm.retrofitjsonexample.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.MyAdapter;
-import presenter.MainContentPresenter;
+import com.example.gabrm.retrofitjsonexample.model.MyAdapter;
+import com.example.gabrm.retrofitjsonexample.presenter.MainContentPresenter;
 
 public class Hero extends AppCompatActivity implements MainContentView {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     MainContentPresenter mainContentPresenter;
-    List<model.Hero> heroes;
+    List<com.example.gabrm.retrofitjsonexample.model.Hero> heroes;
     private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class Hero extends AppCompatActivity implements MainContentView {
     }
 
     @Override
-    public void OnResponseSuccess(List<model.Hero> heroesList) {
+    public void OnResponseSuccess(List<com.example.gabrm.retrofitjsonexample.model.Hero> heroesList) {
         progressDialog.cancel();
         heroes=new ArrayList<>();
         heroes.addAll(heroesList);

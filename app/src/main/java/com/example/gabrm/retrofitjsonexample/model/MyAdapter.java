@@ -1,4 +1,4 @@
-package model;
+package com.example.gabrm.retrofitjsonexample.model;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

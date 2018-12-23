@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-    tools:context="view.Hero">
+    tools:context=".model.view.Hero">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
