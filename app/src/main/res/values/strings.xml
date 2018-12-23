@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">retrofitjsonexample</string>
+    <string name="name">name</string>
+    <string name="realname">realname</string>
+</resources>
