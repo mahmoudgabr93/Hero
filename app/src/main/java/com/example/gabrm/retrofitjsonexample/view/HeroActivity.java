@@ -15,7 +15,7 @@ import java.util.List;
 import com.example.gabrm.retrofitjsonexample.model.MyAdapter;
 import com.example.gabrm.retrofitjsonexample.presenter.MainContentPresenter;
 
-public class Hero extends AppCompatActivity implements MainContentView {
+public class HeroActivity extends AppCompatActivity implements MainContentView {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -27,32 +27,40 @@ public class Hero extends AppCompatActivity implements MainContentView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainContentPresenter=new MainContentPresenter(this);
+        initView();
+        showLoading();
+        mainContentPresenter.LoadMainContent();
+    }
+
+    private void initView() {
         recyclerView=findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         heroes=new ArrayList<>();
-        loadRecyclerView();
     }
 
-    private void loadRecyclerView() {
+    private void showLoading() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.show();
-        mainContentPresenter.LoadMainContent();
     }
 
     @Override
     public void OnResponseSuccess(List<com.example.gabrm.retrofitjsonexample.model.Hero> heroesList) {
-        progressDialog.cancel();
+        cancelDialog();
         heroes=new ArrayList<>();
         heroes.addAll(heroesList);
-        adapter=new MyAdapter(heroes, Hero.this);
+        adapter=new MyAdapter(heroes, HeroActivity.this);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void OnResponseFails() {
-        progressDialog.cancel();
+        cancelDialog();
         Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+    }
+    public void cancelDialog()
+    {
+        progressDialog.cancel();
     }
 }
